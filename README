@@ -1,0 +1,99 @@
+This solution demonstrate the skill set for develop a scalable solution to the given problem.
+
+cd to directory where pom.xml is exist
+Compile:
+    mvn clean compile install
+Test
+    mvn test
+Run:
+    mvn clean compile install
+    java -jar target\dictionary_search-1.0-SNAPSHOT-jar-with-dependencies.jar -m grid.txt -d englishwords.txt
+
+Note: If you got source code from git you can find above two input files in the folder src/main/resources
+
+
+******************************************************************************************************
+Problem Definition:
+-------------------
+Given a N X N grid with a random english language letter in each cell and
+an english dictionary (englishwords.txt), write a program to generate all
+valid words that can be found in the grid.
+
+A valid word in grid should
+ a. be present in englishwords.txt
+ b. cells containing adjacent letters in the word should be neighbors.
+ c. each cell can be used only once in the word.
+
+Example:
+-------
+
+A 4 x 4 grid
+
+   ---------------
+  | A | A | Q | U |
+   ---------------
+  | I | D | F | U |
+   ---------------
+  | D | L | G | Y |
+   ---------------
+  | L | M | K | X |
+   ---------------
+
+Following words can be made from this grid:
+ilk, guy, did, aid, qadi, glia, km, id, lid, ail, ufa, fad, ufd, ad, ml
+
+These are valid words from englishwords.txt included in this directory.
+
+Input format:
+------------
+input grid should be read from a file named grid.txt (sample included in this directory)
+First line contains the number of rows and columns. Each following line has the elements
+of the row.
+
+For the example grid input grid.txt will contain
+
+4 4
+A A Q U
+I D F U
+D L G Y
+L M K X
+
+Output format:
+-------------
+The program should write output to stdout. First line should state the total number
+of words found followed by one word per line in lexicographically sorted order.
+For above example grid the output will look as follows -
+
+20
+ad
+add
+aid
+ail
+did
+dill
+fad
+fail
+glia
+guy
+id
+ilk
+ill
+km
+lid
+ml
+qadi
+ufa
+ufd
+ugli
+
+
+Languages allowed:
+------------------
+  Java
+
+Submission Guidelines:
+----------------------
+Please send in your source code along and brief explanation of your solution.
+Try to come up with the most efficient solution possible.
+The code should be production level which means it should be properly commented and have unit tests. You should not use inefficient algorithms like recursion but should look for optimal data structures to minimize lookups if possible.
+The solution should be able to scale linearly with input grid files of 10x10 or more.
